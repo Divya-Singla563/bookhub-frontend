@@ -11,6 +11,12 @@ const config: Config = {
       fontFamily: {
         sans: ["var(--font-poppins)"],
       },
+      colors: {
+        primary: {
+          cream: "#F4EEE0",
+          green: "#084935",
+        },
+      },
     },
   },
   plugins: [],
