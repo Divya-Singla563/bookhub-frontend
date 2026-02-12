@@ -1,0 +1,343 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&display=swap');
+
+.banner-section {
+    position: relative;
+    min-height: 600px;
+    background: linear-gradient(135deg, #e8f4f8 0%, #f0f4ff 50%, #fef3f5 100%);
+    overflow: hidden;
+    padding: 80px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-container {
+    max-width: 1200px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+}
+
+/* Left Content Styles */
+.banner-content {
+    animation: fadeInLeft 0.8s ease-out;
+}
+
+.banner-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    line-height: 1.2;
+    color: #1a1a1a;
+    margin-bottom: 24px;
+    letter-spacing: -0.02em;
+}
+
+.banner-description {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.125rem;
+    line-height: 1.7;
+    color: #4a5568;
+    margin-bottom: 32px;
+    max-width: 480px;
+}
+
+.banner-cta {
+    font-family: 'Cormorant Garamond', serif;
+    background: #084935;
+    color: #faf7f0;
+    border: none;
+    padding: 16px 48px;
+    font-size: 1rem;
+    font-weight: 600;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 20px rgba(8, 73, 53, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.banner-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transition: left 0.5s;
+}
+
+.banner-cta:hover::before {
+    left: 100%;
+}
+
+.banner-cta:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(8, 73, 53, 0.4);
+    background: #0a5c42;
+}
+
+.banner-cta:active {
+    transform: translateY(0);
+}
+
+/* Right Image Styles */
+.banner-image-wrapper {
+    position: relative;
+    animation: fadeInRight 0.8s ease-out;
+}
+
+.banner-image-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.banner-book-image {
+    position: relative;
+    z-index: 2;
+    filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.15));
+    animation: floatImage 6s ease-in-out infinite;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Floating Decorative Elements */
+.floating-element {
+    position: absolute;
+    border-radius: 50%;
+    animation: float 4s ease-in-out infinite;
+    z-index: 1;
+}
+
+.element-1 {
+    width: 12px;
+    height: 12px;
+    background: #ff6b6b;
+    top: 10%;
+    left: 5%;
+    animation-delay: 0s;
+}
+
+.element-2 {
+    width: 8px;
+    height: 8px;
+    background: #4ecdc4;
+    top: 25%;
+    right: 10%;
+    animation-delay: 0.5s;
+}
+
+.element-3 {
+    width: 6px;
+    height: 6px;
+    background: #ffd93d;
+    bottom: 30%;
+    left: 15%;
+    animation-delay: 1s;
+}
+
+.element-4 {
+    width: 10px;
+    height: 10px;
+    background: #a8e6cf;
+    top: 60%;
+    right: 5%;
+    animation-delay: 1.5s;
+}
+
+.element-5 {
+    width: 14px;
+    height: 14px;
+    background: #c7b3ff;
+    bottom: 15%;
+    left: 8%;
+    animation-delay: 2s;
+}
+
+.element-6 {
+    width: 8px;
+    height: 8px;
+    background: #ff9ff3;
+    top: 40%;
+    left: 2%;
+    animation-delay: 2.5s;
+}
+
+/* Background SVG */
+.banner-bg-svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    opacity: 0.4;
+}
+
+.banner-bg-image {
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Background Decorative Shapes */
+.banner-bg-shapes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    opacity: 0.1;
+    animation: rotate 20s linear infinite;
+}
+
+.shape-1 {
+    width: 300px;
+    height: 300px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+    top: -100px;
+    right: -100px;
+}
+
+.shape-2 {
+    width: 200px;
+    height: 200px;
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+    border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%;
+    bottom: -50px;
+    left: 10%;
+    animation-direction: reverse;
+}
+
+.shape-3 {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+    border-radius: 40% 60% 60% 40% / 60% 30% 70% 40%;
+    top: 50%;
+    left: -50px;
+}
+
+/* Animations */
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes floatImage {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(-5deg);
+    }
+
+    50% {
+        transform: translateY(-20px) rotate(-3deg);
+    }
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0) scale(1);
+    }
+
+    50% {
+        transform: translateY(-20px) scale(1.1);
+    }
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+    .banner-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .banner-content {
+        order: 2;
+    }
+
+    .banner-image-wrapper {
+        order: 1;
+    }
+
+    .banner-title {
+        font-size: 2.5rem;
+    }
+
+    .banner-description {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (max-width: 640px) {
+    .banner-section {
+        padding: 60px 20px;
+        min-height: 500px;
+    }
+
+    .banner-title {
+        font-size: 2rem;
+    }
+
+    .banner-description {
+        font-size: 1rem;
+    }
+
+    .banner-cta {
+        padding: 14px 36px;
+        font-size: 0.95rem;
+    }
+
+    .banner-image-container {
+        min-height: 300px;
+    }
+}
